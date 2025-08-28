@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<title>Froms</title>
+
+<body>
+    <!--Form tags-->
+    <fieldset>
+        <form method="get" action="#" target="blank">
+            First name: <input type="text" size="10" maxlength="3" />
+            <!--input tag doesnt have a separate closing tag-->
+            <br><br>
+            Last Name: <input type="text" size="10" maxlength="3" />
+            <br><br><br>
+            Address: <textarea rows="3" cols="10"></textarea>
+            <br><br>
+            <h>Check boxes:</h>
+            <br>
+            Select your hobby:
+            <input type="checkbox" value="Fishing" />Fishing <!--the value inside is reference value-->
+            <input type="checkbox" value="Sleeping" />Sleeping
+            <input type="checkbox" value="meow" checked />doing Nothing
+            <br>
+            <br>
+            <!--Radio buttons-->
+            <h>Radio buttons:</h>
+            <br>
+            <input type="radio" name="Fishing" value="Fishing" />Fishing <!--the value inside is reference value-->
+            <input type="radio" name="Sleeping" value="Sleeping" />Sleeping
+            <input type="radio" name="meow" checked />doing Nothing
+            <br>
+            <br>
+            <!--13-aug-->
+            <h>Context menu->select</h>
+            <h>Select your skills:</h>
+            <select multiple>
+                <option slected>Coding</option>
+                <option>Gaming</option>
+                <option>testing</option>
+            </select>
+            <br>
+            <br>
+            <h>Select your skills:</h>
+
+            <select multiple size="2"> <!--2 options displayed-->
+                <option>Coding</option>
+                <option>Gaming</option>
+                <option>testing</option>
+            </select>
+            <br>
+            <input type="color" value="#FF9B00" />
+            <br>
+            <br>
+            <h>Select date:</h>
+            <br>
+            <br>
+            <input type="date" value="2025-08-13" />
+            <br>
+            <h>Select date and time:</h>
+            <br>
+            <input type="datetime-local" />
+            <br>
+            <h>Email:</h><br>
+            <input type="email" />
+            <br><br>
+            <h>Enter the number</h><br>
+            <input type="number" max=20 step=2 />
+            <br>
+            <h>Adjust volume:</h><br>
+            <input type="range" min=0 max=100 />
+            <br>
+            <br>
+            <h>Enter your phonenumber:</h>
+            <br>
+            <input type="tel" placeholder="xxx-xx-xx" pattern="[0-9]{10}" required />
+            <input type="Reset" /> <!--Should be inside the form-->
+            <input type="button" value="submit" />
+        </form>
+    </fieldset>
+    <input type="button" value="Submit" />
+</body>
+
+</html>

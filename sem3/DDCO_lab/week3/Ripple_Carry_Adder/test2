@@ -1,0 +1,311 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision - 10;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010A9078 .scope module, "tb" "tb" 2 3;
+ .timescale -9 -10;
+v010E3FE8_0 .var "cin", 0 0;
+v010E3A10_0 .var "clk", 0 0;
+v010E3A68_0 .net "cout", 0 0, L_010E66C8; 1 drivers
+v010E3AC0_0 .var/i "i", 31 0;
+v010E3B18_0 .var "i0", 3 0;
+v010E3B70_0 .var "i1", 3 0;
+RS_010B4624 .resolv tri, L_010E4720, L_010E5C18, L_010E54E0, L_010E5640;
+v010E3CD0_0 .net8 "o", 3 0, RS_010B4624; 4 drivers
+v010E3EE0_0 .var "reset", 0 0;
+v010E3F38 .array "test_vecs", 9 0, 8 0;
+E_010A3088 .event edge, v010E4300_0, v010E3960_0, v010E3908_0;
+S_010A8DD0 .scope module, "u0" "Ripple" 2 38, 3 1, S_010A9078;
+ .timescale 0 0;
+v010E3908_0 .net "a", 3 0, v010E3B18_0; 1 drivers
+v010E3960_0 .net "b", 3 0, v010E3B70_0; 1 drivers
+RS_010B460C .resolv tri, L_010E44B8, L_010E5CC8, L_010E57A0, C4<zzz>;
+v010E3E88_0 .net8 "c", 2 0, RS_010B460C; 3 drivers
+v010E40F0_0 .net "cin", 0 0, v010E3FE8_0; 1 drivers
+v010E3C78_0 .alias "cout", 0 0, v010E3A68_0;
+v010E39B8_0 .alias "sum", 3 0, v010E3CD0_0;
+L_010E46C8 .part v010E3B18_0, 0, 1;
+L_010E43B0 .part v010E3B70_0, 0, 1;
+L_010E4720 .part/pv L_010E2DC8, 0, 1, 4;
+L_010E44B8 .part/pv L_010E4898, 0, 1, 3;
+L_010E5B68 .part v010E3B18_0, 1, 1;
+L_010E5C70 .part v010E3B70_0, 1, 1;
+L_010E5F30 .part RS_010B460C, 0, 1;
+L_010E5C18 .part/pv L_010E4DA0, 1, 1, 4;
+L_010E5CC8 .part/pv L_010E49B0, 1, 1, 3;
+L_010E5698 .part v010E3B18_0, 2, 1;
+L_010E52D0 .part v010E3B70_0, 2, 1;
+L_010E5748 .part RS_010B460C, 1, 1;
+L_010E54E0 .part/pv L_010E4B00, 2, 1, 4;
+L_010E57A0 .part/pv L_010E61F8, 2, 1, 3;
+L_010E58A8 .part v010E3B18_0, 3, 1;
+L_010E5900 .part v010E3B70_0, 3, 1;
+L_010E5220 .part RS_010B460C, 2, 1;
+L_010E5640 .part/pv L_010E63B8, 3, 1, 4;
+S_010A8C38 .scope module, "U0" "fulladd" 3 3, 4 1, S_010A8DD0;
+ .timescale -9 -10;
+L_010E2D90 .functor XOR 1, L_010E46C8, L_010E43B0, C4<0>, C4<0>;
+L_010E2DC8 .functor XOR 1, L_010E3DD8, v010E3FE8_0, C4<0>, C4<0>;
+L_010E2EE0 .functor AND 1, L_010E46C8, v010E3FE8_0, C4<1>, C4<1>;
+L_010E2CE8 .functor AND 1, L_010E46C8, L_010E43B0, C4<1>, C4<1>;
+L_010E2F50 .functor AND 1, L_010E43B0, v010E3FE8_0, C4<1>, C4<1>;
+L_010E2C78 .functor OR 1, L_010E45C0, L_010E4408, C4<0>, C4<0>;
+L_010E4898 .functor OR 1, L_010E4460, L_010E4670, C4<0>, C4<0>;
+v010B11E8_0 .net *"_s0", 0 0, L_010E2D90; 1 drivers
+v010B1298_0 .net *"_s10", 0 0, L_010E2C78; 1 drivers
+v010E3BC8_0 .net *"_s13", 0 0, L_010E45C0; 1 drivers
+v010E41A0_0 .net *"_s15", 0 0, L_010E4408; 1 drivers
+v010E3C20_0 .net *"_s17", 0 0, L_010E4460; 1 drivers
+v010E3F90_0 .net *"_s19", 0 0, L_010E4670; 1 drivers
+v010E3E30_0 .net *"_s3", 0 0, L_010E3DD8; 1 drivers
+v010E41F8_0 .net *"_s4", 0 0, L_010E2EE0; 1 drivers
+v010E4250_0 .net *"_s6", 0 0, L_010E2CE8; 1 drivers
+v010E4148_0 .net *"_s8", 0 0, L_010E2F50; 1 drivers
+v010E4098_0 .net "a", 0 0, L_010E46C8; 1 drivers
+v010E42A8_0 .net "b", 0 0, L_010E43B0; 1 drivers
+v010E4300_0 .alias "c", 0 0, v010E40F0_0;
+v010E3858_0 .net "cout", 0 0, L_010E4898; 1 drivers
+v010E3D80_0 .net "sum", 0 0, L_010E2DC8; 1 drivers
+RS_010B45C4/0/0 .resolv tri, L_010E3D28, L_010E4040, L_010E4618, L_010E4510;
+RS_010B45C4/0/4 .resolv tri, L_010E4568, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_010B45C4 .resolv tri, RS_010B45C4/0/0, RS_010B45C4/0/4, C4<zzzzz>, C4<zzzzz>;
+v010E38B0_0 .net8 "w", 4 0, RS_010B45C4; 5 drivers
+L_010E3D28 .part/pv L_010E2D90, 0, 1, 5;
+L_010E3DD8 .part RS_010B45C4, 0, 1;
+L_010E4040 .part/pv L_010E2EE0, 1, 1, 5;
+L_010E4618 .part/pv L_010E2CE8, 2, 1, 5;
+L_010E4510 .part/pv L_010E2F50, 3, 1, 5;
+L_010E4568 .part/pv L_010E2C78, 4, 1, 5;
+L_010E45C0 .part RS_010B45C4, 1, 1;
+L_010E4408 .part RS_010B45C4, 2, 1;
+L_010E4460 .part RS_010B45C4, 3, 1;
+L_010E4670 .part RS_010B45C4, 4, 1;
+S_010A8908 .scope module, "U1" "fulladd" 3 4, 4 1, S_010A8DD0;
+ .timescale -9 -10;
+L_010E48D0 .functor XOR 1, L_010E5B68, L_010E5C70, C4<0>, C4<0>;
+L_010E4DA0 .functor XOR 1, L_010E47D0, L_010E5F30, C4<0>, C4<0>;
+L_010E4C50 .functor AND 1, L_010E5B68, L_010E5F30, C4<1>, C4<1>;
+L_010E4D30 .functor AND 1, L_010E5B68, L_010E5C70, C4<1>, C4<1>;
+L_010E4940 .functor AND 1, L_010E5C70, L_010E5F30, C4<1>, C4<1>;
+L_010E4EF0 .functor OR 1, L_010E5E28, L_010E5ED8, C4<0>, C4<0>;
+L_010E49B0 .functor OR 1, L_010E5F88, L_010E5BC0, C4<0>, C4<0>;
+v010B1138_0 .net *"_s0", 0 0, L_010E48D0; 1 drivers
+v010B06E8_0 .net *"_s10", 0 0, L_010E4EF0; 1 drivers
+v010B0740_0 .net *"_s13", 0 0, L_010E5E28; 1 drivers
+v010B0848_0 .net *"_s15", 0 0, L_010E5ED8; 1 drivers
+v010B14A8_0 .net *"_s17", 0 0, L_010E5F88; 1 drivers
+v010B1190_0 .net *"_s19", 0 0, L_010E5BC0; 1 drivers
+v010B1450_0 .net *"_s3", 0 0, L_010E47D0; 1 drivers
+v010B1558_0 .net *"_s4", 0 0, L_010E4C50; 1 drivers
+v010B1348_0 .net *"_s6", 0 0, L_010E4D30; 1 drivers
+v010B1240_0 .net *"_s8", 0 0, L_010E4940; 1 drivers
+v010B13A0_0 .net "a", 0 0, L_010E5B68; 1 drivers
+v010B15B0_0 .net "b", 0 0, L_010E5C70; 1 drivers
+v010B13F8_0 .net "c", 0 0, L_010E5F30; 1 drivers
+v010B12F0_0 .net "cout", 0 0, L_010E49B0; 1 drivers
+v010B1500_0 .net "sum", 0 0, L_010E4DA0; 1 drivers
+RS_010B4444/0/0 .resolv tri, L_010E4778, L_010E4358, L_010E5E80, L_010E5D78;
+RS_010B4444/0/4 .resolv tri, L_010E5FE0, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_010B4444 .resolv tri, RS_010B4444/0/0, RS_010B4444/0/4, C4<zzzzz>, C4<zzzzz>;
+v010B1608_0 .net8 "w", 4 0, RS_010B4444; 5 drivers
+L_010E4778 .part/pv L_010E48D0, 0, 1, 5;
+L_010E47D0 .part RS_010B4444, 0, 1;
+L_010E4358 .part/pv L_010E4C50, 1, 1, 5;
+L_010E5E80 .part/pv L_010E4D30, 2, 1, 5;
+L_010E5D78 .part/pv L_010E4940, 3, 1, 5;
+L_010E5FE0 .part/pv L_010E4EF0, 4, 1, 5;
+L_010E5E28 .part RS_010B4444, 1, 1;
+L_010E5ED8 .part RS_010B4444, 2, 1;
+L_010E5F88 .part RS_010B4444, 3, 1;
+L_010E5BC0 .part RS_010B4444, 4, 1;
+S_010A97E8 .scope module, "U2" "fulladd" 3 5, 4 1, S_010A8DD0;
+ .timescale -9 -10;
+L_010E4A20 .functor XOR 1, L_010E5698, L_010E52D0, C4<0>, C4<0>;
+L_010E4B00 .functor XOR 1, L_010E5DD0, L_010E5748, C4<0>, C4<0>;
+L_010E4FD0 .functor AND 1, L_010E5698, L_010E5748, C4<1>, C4<1>;
+L_010E4F60 .functor AND 1, L_010E5698, L_010E52D0, C4<1>, C4<1>;
+L_010E6188 .functor AND 1, L_010E52D0, L_010E5748, C4<1>, C4<1>;
+L_010E64D0 .functor OR 1, L_010E50C0, L_010E59B0, C4<0>, C4<0>;
+L_010E61F8 .functor OR 1, L_010E5488, L_010E56F0, C4<0>, C4<0>;
+v010B0DC8_0 .net *"_s0", 0 0, L_010E4A20; 1 drivers
+v010B0B08_0 .net *"_s10", 0 0, L_010E64D0; 1 drivers
+v010B08F8_0 .net *"_s13", 0 0, L_010E50C0; 1 drivers
+v010B0C10_0 .net *"_s15", 0 0, L_010E59B0; 1 drivers
+v010B0D70_0 .net *"_s17", 0 0, L_010E5488; 1 drivers
+v010B0950_0 .net *"_s19", 0 0, L_010E56F0; 1 drivers
+v010B0BB8_0 .net *"_s3", 0 0, L_010E5DD0; 1 drivers
+v010B0FD8_0 .net *"_s4", 0 0, L_010E4FD0; 1 drivers
+v010B0C68_0 .net *"_s6", 0 0, L_010E4F60; 1 drivers
+v010B0E20_0 .net *"_s8", 0 0, L_010E6188; 1 drivers
+v010B09A8_0 .net "a", 0 0, L_010E5698; 1 drivers
+v010B1030_0 .net "b", 0 0, L_010E52D0; 1 drivers
+v010B0E78_0 .net "c", 0 0, L_010E5748; 1 drivers
+v010B0F28_0 .net "cout", 0 0, L_010E61F8; 1 drivers
+v010B1088_0 .net "sum", 0 0, L_010E4B00; 1 drivers
+RS_010B42C4/0/0 .resolv tri, L_010E5D20, L_010E5AB8, L_010E55E8, L_010E5068;
+RS_010B42C4/0/4 .resolv tri, L_010E5278, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_010B42C4 .resolv tri, RS_010B42C4/0/0, RS_010B42C4/0/4, C4<zzzzz>, C4<zzzzz>;
+v010B10E0_0 .net8 "w", 4 0, RS_010B42C4; 5 drivers
+L_010E5D20 .part/pv L_010E4A20, 0, 1, 5;
+L_010E5DD0 .part RS_010B42C4, 0, 1;
+L_010E5AB8 .part/pv L_010E4FD0, 1, 1, 5;
+L_010E55E8 .part/pv L_010E4F60, 2, 1, 5;
+L_010E5068 .part/pv L_010E6188, 3, 1, 5;
+L_010E5278 .part/pv L_010E64D0, 4, 1, 5;
+L_010E50C0 .part RS_010B42C4, 1, 1;
+L_010E59B0 .part RS_010B42C4, 2, 1;
+L_010E5488 .part RS_010B42C4, 3, 1;
+L_010E56F0 .part RS_010B42C4, 4, 1;
+S_010A9188 .scope module, "U3" "fulladd" 3 6, 4 1, S_010A8DD0;
+ .timescale -9 -10;
+L_010E65E8 .functor XOR 1, L_010E58A8, L_010E5900, C4<0>, C4<0>;
+L_010E63B8 .functor XOR 1, L_010E57F8, L_010E5220, C4<0>, C4<0>;
+L_010E6380 .functor AND 1, L_010E58A8, L_010E5220, C4<1>, C4<1>;
+L_010E6348 .functor AND 1, L_010E58A8, L_010E5900, C4<1>, C4<1>;
+L_010E6460 .functor AND 1, L_010E5900, L_010E5220, C4<1>, C4<1>;
+L_010E62D8 .functor OR 1, L_010E5170, L_010E5850, C4<0>, C4<0>;
+L_010E66C8 .functor OR 1, L_010E5590, L_010E53D8, C4<0>, C4<0>;
+v010A4610_0 .net *"_s0", 0 0, L_010E65E8; 1 drivers
+v010A46C0_0 .net *"_s10", 0 0, L_010E62D8; 1 drivers
+v010A4508_0 .net *"_s13", 0 0, L_010E5170; 1 drivers
+v010A45B8_0 .net *"_s15", 0 0, L_010E5850; 1 drivers
+v010B0D18_0 .net *"_s17", 0 0, L_010E5590; 1 drivers
+v010B0CC0_0 .net *"_s19", 0 0, L_010E53D8; 1 drivers
+v010B0F80_0 .net *"_s3", 0 0, L_010E57F8; 1 drivers
+v010B0A00_0 .net *"_s4", 0 0, L_010E6380; 1 drivers
+v010B0798_0 .net *"_s6", 0 0, L_010E6348; 1 drivers
+v010B0AB0_0 .net *"_s8", 0 0, L_010E6460; 1 drivers
+v010B0A58_0 .net "a", 0 0, L_010E58A8; 1 drivers
+v010B0690_0 .net "b", 0 0, L_010E5900; 1 drivers
+v010B08A0_0 .net "c", 0 0, L_010E5220; 1 drivers
+v010B0B60_0 .alias "cout", 0 0, v010E3A68_0;
+v010B0ED0_0 .net "sum", 0 0, L_010E63B8; 1 drivers
+RS_010B4144/0/0 .resolv tri, L_010E5328, L_010E5538, L_010E51C8, L_010E5118;
+RS_010B4144/0/4 .resolv tri, L_010E5430, C4<zzzzz>, C4<zzzzz>, C4<zzzzz>;
+RS_010B4144 .resolv tri, RS_010B4144/0/0, RS_010B4144/0/4, C4<zzzzz>, C4<zzzzz>;
+v010B07F0_0 .net8 "w", 4 0, RS_010B4144; 5 drivers
+L_010E5328 .part/pv L_010E65E8, 0, 1, 5;
+L_010E57F8 .part RS_010B4144, 0, 1;
+L_010E5538 .part/pv L_010E6380, 1, 1, 5;
+L_010E51C8 .part/pv L_010E6348, 2, 1, 5;
+L_010E5118 .part/pv L_010E6460, 3, 1, 5;
+L_010E5430 .part/pv L_010E62D8, 4, 1, 5;
+L_010E5170 .part RS_010B4144, 1, 1;
+L_010E5850 .part RS_010B4144, 2, 1;
+L_010E5590 .part RS_010B4144, 3, 1;
+L_010E53D8 .part RS_010B4144, 4, 1;
+    .scope S_010A9078;
+T_0 ;
+    %vpi_call 2 13 "$dumpfile", "rca_test.vcd";
+    %vpi_call 2 14 "$dumpvars", 1'sb0, S_010A9078;
+    %end;
+    .thread T_0;
+    .scope S_010A9078;
+T_1 ;
+    %set/v v010E3EE0_0, 1, 1;
+    %delay 125, 0;
+    %set/v v010E3EE0_0, 0, 1;
+    %end;
+    .thread T_1;
+    .scope S_010A9078;
+T_2 ;
+    %set/v v010E3A10_0, 0, 1;
+    %end;
+    .thread T_2;
+    .scope S_010A9078;
+T_3 ;
+    %delay 50, 0;
+    %load/v 8, v010E3A10_0, 1;
+    %inv 8, 1;
+    %set/v v010E3A10_0, 8, 1;
+    %jmp T_3;
+    .thread T_3;
+    .scope S_010A9078;
+T_4 ;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 0, 0;
+   %set/av v010E3F38, 0, 9;
+    %movi 8, 1, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 1, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 34, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 2, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 35, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 3, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 68, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 4, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 69, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 5, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 342, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 6, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 343, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 7, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 478, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 8, 0;
+   %set/av v010E3F38, 8, 9;
+    %movi 8, 479, 9;
+   %ix/load 1, 0, 0;
+   %ix/load 3, 9, 0;
+   %set/av v010E3F38, 8, 9;
+    %end;
+    .thread T_4;
+    .scope S_010A9078;
+T_5 ;
+    %set/v v010E3AC0_0, 0, 32;
+    %set/v v010E3FE8_0, 0, 1;
+    %set/v v010E3B70_0, 0, 4;
+    %set/v v010E3B18_0, 0, 4;
+    %end;
+    .thread T_5;
+    .scope S_010A9078;
+T_6 ;
+    %delay 60, 0;
+    %set/v v010E3AC0_0, 0, 32;
+T_6.0 ;
+    %load/v 8, v010E3AC0_0, 32;
+   %cmpi/s 8, 10, 32;
+    %jmp/0xz T_6.1, 5;
+    %delay 100, 0;
+    %ix/getv/s 3, v010E3AC0_0;
+    %load/av 8, v010E3F38, 9;
+    %set/v v010E3FE8_0, 8, 1;
+    %set/v v010E3B70_0, 9, 4;
+    %set/v v010E3B18_0, 13, 4;
+    %ix/load 0, 1, 0;
+    %load/vp0/s 8, v010E3AC0_0, 32;
+    %set/v v010E3AC0_0, 8, 32;
+    %jmp T_6.0;
+T_6.1 ;
+    %delay 1000, 0;
+    %vpi_call 2 45 "$finish";
+    %end;
+    .thread T_6;
+    .scope S_010A9078;
+T_7 ;
+    %wait E_010A3088;
+    %vpi_call 2 47 "$monitor", "At time = %t, i0=%b, i1=%b,cin=%b,Sum = %b,Carry %b", $time, v010E3B18_0, v010E3B70_0, v010E3FE8_0, v010E3CD0_0, v010E3A68_0;
+    %jmp T_7;
+    .thread T_7, $push;
+# The file index is used to find the file name in the following table.
+:file_names 5;
+    "N/A";
+    "<interactive>";
+    "testbech.v";
+    "design.v";
+    "C:\Course_materials\sem3\DDCO_lab\week3\Fulladder\design.v";

@@ -1,0 +1,72 @@
+$date
+	Tue Aug 19 10:55:53 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1s
+$end
+$scope module fulladd_tb $end
+$var wire 1 ! s $end
+$var wire 1 " cout $end
+$var reg 1 # a $end
+$var reg 1 $ b $end
+$var reg 1 % c $end
+$scope module A1 $end
+$var wire 1 # a $end
+$var wire 1 $ b $end
+$var wire 1 % c $end
+$var wire 1 " cout $end
+$var wire 1 ! sum $end
+$var wire 5 & w [4:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+$end
+#0
+$dumpvars
+b0 &
+0%
+0$
+0#
+0"
+0!
+$end
+#5
+1!
+1%
+#10
+1!
+b1 &
+0%
+1$
+#15
+1"
+0!
+b1001 &
+1%
+#20
+0"
+1!
+b1 &
+0%
+0$
+1#
+#25
+1"
+0!
+b10011 &
+1%
+#30
+0!
+b10100 &
+0%
+1$
+#35
+1!
+b11110 &
+1%
+#40

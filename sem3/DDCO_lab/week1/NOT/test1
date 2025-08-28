@@ -1,0 +1,40 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_00986FE0 .scope module, "not_test" "not_test" 2 1;
+ .timescale 0 0;
+v00984660_0 .var "a", 0 0;
+v00984818_0 .net "y", 0 0, L_00984870; 1 drivers
+S_00984580 .scope module, "meow" "not_gate" 2 3, 3 2, S_00986FE0;
+ .timescale 0 0;
+v00987068_0 .net "a", 0 0, v00984660_0; 1 drivers
+v00984608_0 .alias "y", 0 0, v00984818_0;
+L_00984870 .reduce/nor v00984660_0;
+    .scope S_00986FE0;
+T_0 ;
+    %delay 0, 0;
+    %set/v v00984660_0, 0, 1;
+    %delay 10, 0;
+    %set/v v00984660_0, 1, 1;
+    %end;
+    .thread T_0;
+    .scope S_00986FE0;
+T_1 ;
+    %vpi_call 2 12 "$monitor", $time, "a=%b, y=%b", v00984660_0, v00984818_0;
+    %end;
+    .thread T_1;
+    .scope S_00986FE0;
+T_2 ;
+    %vpi_call 2 17 "$dumpfile", "not_test.vcd";
+    %vpi_call 2 18 "$dumpvars", 1'sb0, S_00986FE0;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_bench.v";
+    "design.v";

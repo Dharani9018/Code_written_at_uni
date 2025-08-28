@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Meow</title>
+</head>
+<body>
+    <script>
+        const colors = ["red","green","blue"];
+        document.writeln(colors[1]); //index starts from 0.
+        const mixed = [25,"pesu",true,{class: "A&C"}]
+        document.writeln(mixed[1]);
+        document.writeln(mixed[3]);
+        document.writeln(JSON.stringify(mixed[0])); 
+    </script>
+    <br>
+    <script>
+        let a = 10; let b = 3;
+        document.writeln("<h2>Arithematic operators</h2>");
+        document.writeln("Addition:" + a+b + "<br>");
+        //** ->exponential,++,--
+        document.writeln("Sub:" +(a-b) + "<br>");
+        document.writeln("Increment: " +(++a) + "<br>");
+        document.writeln("Increment: " +(++b) + "<br>");
+        document.writeln("<h2>Assignment operators</h2>");
+        //=
+        var name = "PESU";
+            document.writeln("<h3>Shorthand assignment: +=,-+,/=,*=,%=</h3>");
+        //Shorthand assignment: +=,-+,/=,*=,%=
+        document.writeln("<h2>Comparision operators:</h2>");
+        document.writeln((10 == 10) + "<br>");
+        document.writeln((10 == "10") + "<br>"); //loose equality
+        document.writeln((10 === 10) + "<br>"); //strict equality.
+        document.writeln((10 === '10') + "<br>");
+        document.writeln((9 !== 10) + "<br>");
+        document.writeln((9 != 10) + "<br>");
+        document.writeln((9 !== 9) + "<br>");
+        document.writeln((9 != 9) + "<br>");
+        document.writeln((9 !== '9') + "<br>");
+        document.writeln((9 != '9') + "<br>");
+        document.writeln("<h2>ternary operator</h2>");
+        
+        //let age = 99
+        //document.writelen(age>18?"Vote":"NO");
+        //Ternary operator
+        let age=30
+        document.writeln(age>18?"Vote":"No Vote");
+        document.writeln( "<br>");
+//Type operator
+        document.writeln((typeof 45) + "<br>");
+        document.writeln((typeof "pesu") + "<br>");
+        document.writeln((typeof 45.5) + "<br>");
+        document.writeln((typeof true) + "<br>");
+
+        let arr=[1,2,3,4,5];
+        document.writeln((arr instanceof Array) + "<br>");
+        document.writeln((grr instanceof Array) + "<br>"); //wrong.
+
+        
+
+    </script>
+    <br><br>
+    <script>
+        document.writeln("<h2>Functions</h2>");
+        fun1(); //Works due to hoisting.
+        function fun1()
+        {
+            document.writeln("Hello from the function1" + "<br><br>")
+        }
+        fun1();
+
+        function greet(name)
+        {
+            document.writeln("Hello from "+name+"<br>")
+            return "Greeting sent"
+        }
+        document.writeln(greet("PESU") + "<br>")
+        document.writeln("<h2>Arrow funtions: not hoisted</h2>");
+        //Functions expressed using arrow key (=>)
+        /*
+        Syntax:
+        let name = (parameters) =>{
+        statements
+        };
+        */
+       document.writeln( "<br>");
+       let add = (a,b) => {
+        let sum = a+b;
+        document.writeln("Sum: " + sum + "<br>")
+        }
+       add(10,20);
+       //this keyword and arrow functions.
+       let display = (...args)=>{
+        document.writeln("Args recieved: "+ args.length+"<br>")
+        document.writeln("Values: "+args.join(" ")+"<br>")
+       };
+       display(1,1,1,1,1,1,1,"meow")
+
+       hello();
+       function hello(){
+            document.writeln("Hello from function")
+       };
+       let greet = () => document.writeln("Hello from greet");
+       greet();
+
+
+    </script>
+</body>
+</html>

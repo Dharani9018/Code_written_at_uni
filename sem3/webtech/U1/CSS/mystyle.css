@@ -1,0 +1,12 @@
+p {
+  background-color: rgb(105, 62, 169);
+}
+
+body {
+  background-color: ""; /* This is invalid - you need to specify a color or use 'transparent' */
+}
+
+h2 {
+  border: dotted; /* Missing border color and width */
+  background-color: grey;
+}

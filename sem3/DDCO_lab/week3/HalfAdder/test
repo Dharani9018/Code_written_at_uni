@@ -1,0 +1,53 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_010A3188 .scope module, "halfadd_tb" "halfadd_tb" 2 1;
+ .timescale 0 0;
+v010A6D08_0 .var "aa", 0 0;
+v010A6D60_0 .var "bb", 0 0;
+v010A6DB8_0 .net "cy", 0 0, L_010A6EA0; 1 drivers
+v010A6E10_0 .net "ss", 0 0, L_010A4C20; 1 drivers
+S_010A3210 .scope module, "add1" "halfadd" 2 4, 3 1, S_010A3188;
+ .timescale 0 0;
+L_010A4C20 .functor XOR 1, v010A6D08_0, v010A6D60_0, C4<0>, C4<0>;
+L_010A6EA0 .functor AND 1, v010A6D08_0, v010A6D60_0, C4<1>, C4<1>;
+v010A2A20_0 .net "a", 0 0, v010A6D08_0; 1 drivers
+v010A2A78_0 .net "b", 0 0, v010A6D60_0; 1 drivers
+v010A2AD0_0 .alias "cout", 0 0, v010A6DB8_0;
+v010A6CB0_0 .alias "sum", 0 0, v010A6E10_0;
+    .scope S_010A3188;
+T_0 ;
+    %vpi_call 2 7 "$dumpfile", "halfadd_test.vcd";
+    %vpi_call 2 8 "$dumpvars", 1'sb0, S_010A3188;
+    %end;
+    .thread T_0;
+    .scope S_010A3188;
+T_1 ;
+    %delay 5, 0;
+    %set/v v010A6D08_0, 0, 1;
+    %set/v v010A6D60_0, 0, 1;
+    %delay 5, 0;
+    %set/v v010A6D08_0, 0, 1;
+    %set/v v010A6D60_0, 1, 1;
+    %delay 5, 0;
+    %set/v v010A6D08_0, 1, 1;
+    %set/v v010A6D60_0, 0, 1;
+    %delay 5, 0;
+    %set/v v010A6D08_0, 1, 1;
+    %set/v v010A6D60_0, 1, 1;
+    %end;
+    .thread T_1;
+    .scope S_010A3188;
+T_2 ;
+    %vpi_call 2 17 "$monitor", $time, "a=%b, b=%b, sum=%b, carry=%b", v010A6D08_0, v010A6D60_0, v010A6E10_0, v010A6DB8_0;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "testbench.v";
+    "design.v";

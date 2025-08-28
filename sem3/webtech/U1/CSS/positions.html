@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Position Demo</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      height: 2000px; /* to allow scrolling */
+    }
+
+    .container {
+      border: 2px solid black;
+      margin: 20px;
+      padding: 20px;
+      height: 300px;
+      position: relative; /* reference for absolute children */
+    }
+
+    .box {
+      width: 120px;
+      height: 80px;
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 80px;
+      border-radius: 8px;
+    }
+
+    .static {
+      background: gray;
+      position: static;
+    }
+
+    .relative {
+      background: blue;
+      position: relative;
+      top: 20px;
+      left: 30px;
+    }
+
+    .absolute {
+      background: green;
+      position: absolute;
+      top: 40px;
+      right: 20px;
+    }
+
+    .fixed {
+      background: red;
+      position: fixed;
+      top: 10px;
+      right: 10px;
+    }
+
+    .sticky {
+      background: orange;
+      position: sticky;
+      top: 0;
+    }
+  </style>
+</head>
+<body>
+  <h2>CSS Position Example</h2>
+  <p>Scroll down to see how <b>fixed</b> and <b>sticky</b> behave.</p>
+
+  <div class="container">
+    <div class="box static">Static</div>
+    <div class="box relative">Relative</div>
+    <div class="box absolute">Absolute</div>
+    <div class="box sticky">Sticky</div>
+  </div>
+
+  <p>Keep scrolling...</p>
+  <p>Notice how the <span style="color:red;font-weight:bold;">Fixed</span> box stays at the corner.</p>
+
+  <div class="box fixed">Fixed</div>
+</body>
+</html>

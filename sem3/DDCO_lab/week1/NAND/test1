@@ -1,0 +1,52 @@
+#! /c/iverilog/bin/vvp
+:ivl_version "0.9.7 " "(v0_9_7)";
+:vpi_time_precision + 0;
+:vpi_module "system";
+:vpi_module "v2005_math";
+:vpi_module "va_math";
+S_01124920 .scope module, "nand_test" "nand_test" 2 1;
+ .timescale 0 0;
+v01124688_0 .var "a", 0 0;
+v01128948_0 .var "b", 0 0;
+v011289A0_0 .net "y", 0 0, L_0112DEF8; 1 drivers
+S_011249A8 .scope module, "meow" "nand_gate" 2 3, 3 2, S_01124920;
+ .timescale 0 0;
+L_011289F8 .functor AND 1, v01124688_0, v01128948_0, C4<1>, C4<1>;
+v01124A30_0 .net *"_s0", 0 0, L_011289F8; 1 drivers
+v01124580_0 .net "a", 0 0, v01124688_0; 1 drivers
+v011245D8_0 .net "b", 0 0, v01128948_0; 1 drivers
+v01124630_0 .alias "y", 0 0, v011289A0_0;
+L_0112DEF8 .reduce/nor L_011289F8;
+    .scope S_01124920;
+T_0 ;
+    %delay 0, 0;
+    %set/v v01124688_0, 0, 1;
+    %set/v v01128948_0, 0, 1;
+    %delay 5, 0;
+    %set/v v01124688_0, 0, 1;
+    %set/v v01128948_0, 1, 1;
+    %delay 10, 0;
+    %set/v v01124688_0, 1, 1;
+    %set/v v01128948_0, 0, 1;
+    %delay 15, 0;
+    %set/v v01124688_0, 1, 1;
+    %set/v v01128948_0, 1, 1;
+    %end;
+    .thread T_0;
+    .scope S_01124920;
+T_1 ;
+    %vpi_call 2 14 "$monitor", $time, "a=%b, b=%b, y=%b", v01124688_0, v01128948_0, v011289A0_0;
+    %end;
+    .thread T_1;
+    .scope S_01124920;
+T_2 ;
+    %vpi_call 2 19 "$dumpfile", "nand_test.vcd";
+    %vpi_call 2 20 "$dumpvars", 1'sb0, S_01124920;
+    %end;
+    .thread T_2;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "test_bench.v";
+    "design.v";
