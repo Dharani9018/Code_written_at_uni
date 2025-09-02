@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meow</title>
+</head>
+<body>
+    <script>
+        //javascript objects
+       var Student = 
+        {
+            firstname : "Firstname",
+            lastname : "Lastname",
+            SRN:110,
+            fullname:function (){
+               // alert(this.firstname +" "+ this.lastname)
+               return this.firstname + " " + this.lastname;
+            }
+        }
+        //alternative way to initialize
+        //Student.firstname = "hi";
+
+        document.write(Student.firstname);
+        document.writeln("<br>");
+        document.write(Student.lastname);
+        document.writeln("<br>");
+        document.write(Student.fullname());
+
+        //function constructors:
+         document.writeln("<br>");
+        function Person(name,sec,sem)
+        {
+            this.stuname = name;
+            this.stusec = sec;
+            this.stusem = sem;
+        }
+        //to create object properties outside constructor
+        Person.prototype.stubranch = "CSE";
+        Person.prototype.stusub = "Web tech"
+        //initialize an object from constructor
+        var Student1 = new Person("Dharani","C",3);
+
+        document.write(Student1.stuname+"<br>"+Student1.stusec+"<br>"+Student1.stusem+"<br>"+Student1.stubranch+"<br>"+Student1.stusub);
+        document.writeln("<br>");
+        function Color(c1,c2,c3)
+        {
+            this.clr1 = c1;
+            this.clr2 = c2;
+            this.clr3 = c3;
+        }
+
+
+        var C1 = new Color("Pink","Blue","Green");
+        document.write("<br>"+C1.clr1+"<br>"+C1.clr2+"<br>"+C1.clr3); 
+    </script>
+</body>
+</html>
