@@ -13,6 +13,7 @@
     
 
     <script>
+        /*
         document.getElementById("demo").innerHTML="Data structure" //changing content.
         document.getElementsByClassName("example")[1].innerHTML
         var x = document.getElementsByTagName("p") //x->array has collection of p nodes
@@ -23,7 +24,14 @@
        document.write("<br>",e[0].tagName); 
        e[1].style.color = "red";
        //e[1].value = "Y"; ->changes value
-       
+       */
+
+       var a = document.querySelector(".example");
+       //x.style.color="red";
+        for( i in a)
+        {
+            a[i].style.backgroundColor = "yellow";
+        }
 
 
    </script>

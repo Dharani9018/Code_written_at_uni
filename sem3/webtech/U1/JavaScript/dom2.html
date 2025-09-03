@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+    <script>
+        function init()
+        {
+         var x =  document.querySelector("p")
+         x.style.color="red"
+         list = document.querySelectorAll(".g1")
+        /* for(i in list)
+         {
+            list[i].innerText=list[i].innerText.toUpperCase();
+         }*/
+
+         //creating a new element:
+         newele = document.createElement("li")
+         newele.innerText = "DDCO"
+         //appending the child ddco to parent u1.
+         ul1 = document.querySelector("ul")
+        // ul1.appendChild(newele); 
+         //ul1.insertBefore(newele,list[-1]);
+         //insert before firstchild of ul
+         ul1.insertBefore(newele,ul1.firstChild)
+
+         //removing a child:
+         //ul1.removeChild(list[0]);  //web tech gets removed
+         //list[0].remove() 
+
+         //replacing a child node:
+         x = document.createTextNode("AFLL") 
+         ul1.replaceChild(x,ul1.children[1]);
+        }
+    </script>
+</head>
+<body onload = "init()">
+    <p>Subjects</p>
+    <ul>
+        <li>Data Structure </li>
+        <li class="g1">Web Technologies</li>
+        <li class="g1">Data Science</li>   
+    </ul>
+</body>
+</html>

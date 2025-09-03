@@ -105,7 +105,7 @@ void display(int *q,int rear,int front)
     i = (i+1)%MAX;
   }
   printf("%d\n",q[rear]);
-  return;
+
 }
 
 int main()
@@ -127,7 +127,7 @@ while (1)
         Delete_at_front(q,&front,&rear);
         break;
       case 3:
-        display(q,front,rear);
+        display(q,rear,front);
         break;
       case 6:
         return 0;

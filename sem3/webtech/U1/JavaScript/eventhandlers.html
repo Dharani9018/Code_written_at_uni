@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event handlers</title>
+    <script>
+        function handler(event){
+            e = event;
+            event.target.style.color = "red";
+            console.log(event.target.innerText);//innerHTML
+        }
+
+        function init()
+        {
+            list = document.querySelectorAll("li")
+            for(var i in list)
+            {
+                list[i].onclick = handler;
+            }
+            //using add event listner
+            document.querySelector("p").addEventListener("click",function (event)
+            { 
+                event.target.innerHTML = "Birds"
+            })
+        }
+    </script>
+</head>
+<body onload="init()">
+    <p onclick="handler(event)"> Animals </p>
+    <ul>
+        <li>Cat</li>
+        <li>Dog</li>
+        <li>Rabbit</li>
+    </ul>
+</body>
+</html>
