@@ -46,7 +46,6 @@ void insertAtrear(Node *head,int data)
 	return;
   }
   Node *cur = head->prev;
-  head->prev = newnode;
   newnode->prev = cur;
   newnode->next = head;
   head->prev = newnode;
