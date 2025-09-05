@@ -3,14 +3,14 @@
 #define MAX 5
 
 //Can act as stack or queue.
-void Insert_At_front(int *q,int *rear,int *front,int ele)
+void Insert_At_front(int *q,int *front,int *rear,int ele)
 {
   if((*front==0 && *rear==MAX-1) || (*front == *rear + 1))
   {
     printf("\nOverflow\n");
     return;
   }
-  if(*front == *rear == -1)
+  if(*front == -1 && *rear == -1)
   {
     *front = *rear = 0;
   }
@@ -91,7 +91,7 @@ void Delete_at_rear(int *q,int *front,int *rear)
   return;
 }
 
-void display(int *q,int rear,int front)
+void display(int *q,int front,int rear)
 {
   if(front==-1 && rear==-1)
   {
@@ -121,13 +121,13 @@ while (1)
       case 1:
         printf("\nEnter the element: ");
         scanf("%d",&ele);
-        Insert_At_front(q,&rear,&front,ele);
+        Insert_At_front(q,&front,&rear,ele);
         break;
       case 2:
         Delete_at_front(q,&front,&rear);
         break;
       case 3:
-        display(q,rear,front);
+        display(q,front,rear);
         break;
       case 6:
         return 0;
