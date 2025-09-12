@@ -1,12 +1,26 @@
+
+/* External CSS: Styles for all <p> elements (applies to the third paragraph in css.html) */
 p {
-  background-color: rgb(105, 62, 169);
+  color: rgb(0, 102, 204); /* Blue text for external style demonstration */
+  background-color: #e0eaff; /* Light blue background for visibility */
+  font-size: 1.1em;
+  margin: 12px 0;
 }
 
+
+/* (Optional) External CSS for <body> - can be overridden by internal CSS in <style> tag */
 body {
-  background-color: ""; /* This is invalid - you need to specify a color or use 'transparent' */
+  background-color: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 40px;
 }
 
+
+/* External CSS for <h2> headings (can be overridden by internal CSS) */
 h2 {
-  border: dotted; /* Missing border color and width */
-  background-color: grey;
+  border: 2px dotted #888;
+  background-color: #dbacac;
+  color: #333;
+  padding: 6px 0 6px 10px;
+  margin-bottom: 20px;
 }

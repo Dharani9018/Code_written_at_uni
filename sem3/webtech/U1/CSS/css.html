@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<!--13/08/2025-->
-<html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="mystyle.css">
-        <style>
-            p{color:rgb(6, 92, 63)}
-        </style>
-    </head>
-    <body>
-        <h2 style="color: rgb(103, 96, 87);">CSS level Styling</h2>
-        <p style="color: rgb(255, 133, 133);">This is inline css style:</p>
-        <p>This is internal css style</p>
-        <p>This is external css style</p> <!--Cascading conflict-->
-        
-    </body>
+<!-- 13/08/2025 -->
+<html lang="en">
+<head>
+    <title>CSS Level Styling</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="mystyle.css">
+    <style>
+        /* Set base font and background for the page */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 40px; /* Add margin around the body */
+            /*Use margin for overal spacing;*/
+        }
+        /* Style for all h2 headings */
+        h2 {
+            color: rgb(103, 96, 87);
+            margin-bottom: 20px;
+        }
+        /* Style for all paragraph elements */
+        p {
+            color: rgb(6, 92, 63);
+            font-size: 1.1em;
+            margin: 12px 0;
+        }
+        /* Inline-style class for specific paragraph */
+        /*accessing class via .classname*/
+        .inline-style {
+            color: rgb(255, 133, 133) !important;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS Level Styling</h2>
+    <!-- Paragraph with inline-style class (overrides other styles) -->
+    <p class="inline-style">This is inline CSS style</p>
+    <!-- Paragraph using internal CSS style -->
+    <p>This is internal CSS style</p>
+    <!-- Paragraph intended for external CSS style -->
+    <p>This is external CSS style</p>
+</body>
 </html>

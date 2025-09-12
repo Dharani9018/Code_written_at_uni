@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+  <script>
+ console.log("Array methods");
+
+// Define an array with mixed types: numbers, strings, and a nested array
+var arr = [1, 2, "Cat", 3, 4, "Webtech", [78, 89]];
+
+console.log("Original array: " + arr);
+// Output: Original array: 1,2,Cat,3,4,Webtech,78,89
+// Note: The nested array [78, 89] is converted to "78,89" when printed
+
+// Add a new element to the end of the array using push()
+arr.push(100);
+console.log("Using push: arr.push(100) " + arr);
+// Output: Using push: arr.push(100) 1,2,Cat,3,4,Webtech,78,89,100
+
+// Convert the array to a string using toString()
+console.log("Using toString(): " + arr.toString());
+// Output: Using toString(): 1,2,Cat,3,4,Webtech,78,89,100
+// Behavior: toString() joins all elements with commas
+// Nested array [78, 89] becomes "78,89" as a single string
+
+// Convert the array to a string using join("") — no separator
+console.log("Using join(): " + arr.join(""));
+// Output: Using join(): 12Cat34Webtech78,89100
+// Behavior:
+// - Each element is converted to a string
+// - Nested array [78, 89] becomes "78,89"
+// - All strings are concatenated with no separator
+
+//pop removes the last element and returns it.
+console.log("Using pop(): Removed element " + arr.pop());
+console.log("Array after pop(): " + arr);
+
+//Shitf removes the first element and returns it.
+console.log("Using shift(): Removed element " + arr.shift());
+
+//unshift adds element to the start of the array.
+arr.unshift("PESU");
+console.log("Using unshift(): " + arr);
+
+//delete removes element but does not change the length of the array.
+delete arr[2];
+console.log("Using delete: " + arr);
+console.log("Array length after delete: " + arr.length);
+
+//splice can be used to add,remove or replace elements in the array.
+//splice(starting index,no of elements to be removed, elements to be added)
+arr.splice(2,1,"Dog","Cat");
+console.log("Using splice to remove 1 element at index 2 and add Dog, Cat: " + arr);
+arr.splice(4,0,"Rabbit");
+console.log("Using splice to add Rabbit at index 4: " + arr);
+
+//reverse reverses the array.
+arr.reverse();
+console.log("Using reverse(): " + arr);
+
+//sort sorts the array lexicographically.
+arr.sort(); 
+console.log("Using sort(): " + arr);
+//Note: Numbers are sorted as strings, so "100" comes before "2"
+
+/*
+| Method             | Example                              | Output                     |
+|--------------------|--------------------------------------|----------------------------|
+| `length`           | `"Webtech".length`                   | `7`                        |
+| `charAt()`         | `"Webtech".charAt(2)`                | `"b"`                      |
+| `indexOf()`        | `"Webtech".indexOf("tech")`          | `3`                        |
+| `includes()`       | `"Webtech".includes("Web")`          | `true`                     |
+| `slice()`          | `"Webtech".slice(0, 3)`              | `"Web"`                    |
+| `substring()`      | `"Webtech".substring(3)`             | `"tech"`                   |
+| `toUpperCase()`    | `"Webtech".toUpperCase()`            | `"WEBTECH"`                |
+| `toLowerCase()`    | `"Webtech".toLowerCase()`            | `"webtech"`                |
+| `replace()`        | `"Webtech".replace("tech", "dev")`   | `"Webdev"`                 |
+| `split()`          | `"a,b,c".split(",")`                 | `["a", "b", "c"]`          |
+| `trim()`           | `"  Webtech  ".trim()`               | `"Webtech"`                |
+| `concat()`         | `"Web".concat("tech")`               | `"Webtech"`                |
+*/
+//Set timeout and interval
+    function sayHi(phrase,name)
+    {
+        alert(phrase + ", " + name);
+    }
+    setTimeout(sayHi,10000,"Hello","PESU") //after 10 seconds
+    //setInterval(sayHi,2000,"Hello","PESU") //every 2 seconds
+  </script>
+</body>
+</html>
+

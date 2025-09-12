@@ -1,82 +1,91 @@
 <!DOCTYPE html>
-<html>
-<title>Froms</title>
-
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Forms Example</title>
+</head>
 <body>
-    <!--Form tags-->
+  <form method="get" action="#" target="_blank">
     <fieldset>
-        <form method="get" action="#" target="blank">
-            First name: <input type="text" size="10" maxlength="3" />
-            <!--input tag doesnt have a separate closing tag-->
-            <br><br>
-            Last Name: <input type="text" size="10" maxlength="3" />
-            <br><br><br>
-            Address: <textarea rows="3" cols="10"></textarea>
-            <br><br>
-            <h>Check boxes:</h>
-            <br>
-            Select your hobby:
-            <input type="checkbox" value="Fishing" />Fishing <!--the value inside is reference value-->
-            <input type="checkbox" value="Sleeping" />Sleeping
-            <input type="checkbox" value="meow" checked />doing Nothing
-            <br>
-            <br>
-            <!--Radio buttons-->
-            <h>Radio buttons:</h>
-            <br>
-            <input type="radio" name="Fishing" value="Fishing" />Fishing <!--the value inside is reference value-->
-            <input type="radio" name="Sleeping" value="Sleeping" />Sleeping
-            <input type="radio" name="meow" checked />doing Nothing
-            <br>
-            <br>
-            <!--13-aug-->
-            <h>Context menu->select</h>
-            <h>Select your skills:</h>
-            <select multiple>
-                <option slected>Coding</option>
-                <option>Gaming</option>
-                <option>testing</option>
-            </select>
-            <br>
-            <br>
-            <h>Select your skills:</h>
+      <legend>Personal Information</legend>
 
-            <select multiple size="2"> <!--2 options displayed-->
-                <option>Coding</option>
-                <option>Gaming</option>
-                <option>testing</option>
-            </select>
-            <br>
-            <input type="color" value="#FF9B00" />
-            <br>
-            <br>
-            <h>Select date:</h>
-            <br>
-            <br>
-            <input type="date" value="2025-08-13" />
-            <br>
-            <h>Select date and time:</h>
-            <br>
-            <input type="datetime-local" />
-            <br>
-            <h>Email:</h><br>
-            <input type="email" />
-            <br><br>
-            <h>Enter the number</h><br>
-            <input type="number" max=20 step=2 />
-            <br>
-            <h>Adjust volume:</h><br>
-            <input type="range" min=0 max=100 />
-            <br>
-            <br>
-            <h>Enter your phonenumber:</h>
-            <br>
-            <input type="tel" placeholder="xxx-xx-xx" pattern="[0-9]{10}" required />
-            <input type="Reset" /> <!--Should be inside the form-->
-            <input type="button" value="submit" />
-        </form>
+      <label for="fname">First name:</label>
+      <input type="text" id="fname"  size="15" maxlength="30" required>
+      <br><br>
+
+      <label for="lname">Last name:</label>
+      <input type="text" id="lname" name="lname" size="15" maxlength="30" required>
+      <br><br>
+
+      <label for="address">Address:</label><br>
+      <textarea id="address" name="address" rows="4" cols="30"></textarea>
     </fieldset>
-    <input type="button" value="Submit" />
-</body>
 
+    <fieldset>
+      <legend>Hobbies</legend>
+      <h4>Checkboxes (pick multiple)</h4>
+      <label><input type="checkbox" name="hobby" value="Fishing"> Fishing</label>
+      <label><input type="checkbox" name="hobby" value="Sleeping"> Sleeping</label>
+      <label><input type="checkbox" name="hobby" value="Nothing" checked> Doing Nothing</label>
+      <br><br>
+
+      <h4>Radio buttons (pick one)</h4>
+      <label><input type="radio" name="hobbyChoice" value="Fishing"> Fishing</label>
+      <label><input type="radio" name="hobbyChoice" value="Sleeping"> Sleeping</label>
+      <label><input type="radio" name="hobbyChoice" value="Nothing"> Doing Nothing</label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Skills</legend>
+      <label for="skills">Select your skill:</label>
+      <select id="skills" name="skills">
+        <option value="coding">Coding</option>
+        <option value="gaming">Gaming</option>
+        <option value="testing" selected>Testing</option>
+      </select>
+      <br><br>
+
+      <label for="skills-multi">Select multiple skills:</label><br>
+      <select id="skills-multi" name="skillsMulti" multiple size="3">
+        <option value="coding">Coding</option>
+        <option value="gaming">Gaming</option>
+        <option value="testing">Testing</option>
+      </select>
+    </fieldset>
+
+    <fieldset>
+      <legend>Other Inputs</legend>
+      <label>Pick a color:</label>
+      <input type="color" name="favColor" value="#FF9B00">
+      <br><br>
+
+      <label>Select a date:</label>
+      <input type="date" name="date" value="2025-08-13">
+      <br><br>
+
+      <label>Select date and time:</label>
+      <input type="datetime-local" name="datetime">
+      <br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+      <br><br>
+
+      <label for="number">Enter a number (max 20, step 2):</label>
+      <input type="number" id="number" name="number" max="20" step="2">
+      <br><br>
+
+      <label>Adjust volume:</label>
+      <input type="range" name="volume" min="0" max="100">
+      <br><br>
+
+      <label for="phone">Phone number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="1234567890" pattern="[0-9]{10}" required>
+    </fieldset>
+
+    <br>
+    <input type="reset" value="Reset">
+    <input type="submit" value="Submit">
+  </form>
+</body>
 </html>

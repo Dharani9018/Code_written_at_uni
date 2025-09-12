@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CSS Selectors Example</title>
+    <style>
+        /* Universal selector */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Type selector */
+        h1 {
+            color: #2e7d32;
+        }
+
+        /* Class selector */
+        .highlight {
+            background: #fff59d;
+        }
+
+        /* ID selector */
+        #unique {
+            color: #d32f2f;
+            font-weight: bold;
+        }
+
+        /* Descendant selector */
+        .container p {
+            margin-left: 20px;
+        }
+
+        /* Child selector */
+        ul > li {
+            color: #1976d2;
+        }
+
+        /* Attribute selector */
+        input[type="text"] {
+            border: 2px solid #388e3c;
+        }
+
+        /* Pseudo-class selector */
+        a:hover {
+            color: #fbc02d;
+        }
+
+        /* Pseudo-element selector */
+        p::first-line {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Selectors Demo</h1>
+    <p>This is a <span class="highlight">highlighted</span> word using a class selector.</p>
+    <p id="unique">This paragraph uses an ID selector.</p>
+    <div class="container">
+        <p>This paragraph is inside a container (descendant selector).</p>
+    </div>
+    <ul>
+        <li>Child selector item 1</li>
+        <li>Child selector item 2</li>
+    </ul>
+    <form>
+        <input type="text" placeholder="Attribute selector">
+        <input type="password" placeholder="Not selected">
+    </form>
+    <a href="#">Hover over this link (pseudo-class)</a>
+    <p>This paragraph demonstrates the <b>pseudo-element</b> selector.</p>
+</body>
+</html>

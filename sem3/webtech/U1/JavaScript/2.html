@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functions and this binding</title>
+</head>
+<body>
+<script>
+  //"use strict"; // Toggle to test strict mode behavior
+
+  console.log("===== Example 1: Method vs Detached Function =====");
+
+  let person = {
+    name: "pranav",
+    sayName: function () {
+      console.log("sayName -> this.name:", this.name);
+    }
+  };
+
+  // ✅ Method call: works because `this` = object before the dot
+  person.sayName(); // "pranav"
+
+  // ❌ Copying into variable loses the object binding
+  let say = person.sayName;
+  say();
+  /*
+    - Non-strict mode: `this` = window → prints window.name (usually "")
+    - Strict mode: `this` = undefined → prints "undefined"
+  */
+</script>
+
+<script>
+  //"use strict"; // Toggle to test
+
+  console.log("\n===== Example 2: Regular vs Arrow Function =====");
+
+  let obj = {
+    name: "anu",
+
+    // Regular function → binds `this` dynamically at call time
+    sayName: function () {
+      console.log("Regular function -> this.name:", this.name);
+    },
+
+    // Arrow function → does NOT bind its own `this`
+    // Instead, it inherits `this` from the surrounding scope (here: global)
+    sayNameArrow: () => {
+      console.log("Arrow function -> this.name:", this.name);
+    }
+  };
+
+  // ✅ Regular method call
+  obj.sayName(); // "anu"
+
+  // ❌ Arrow method call (still global `this`)
+  obj.sayNameArrow(); // "" (in browser global scope, `window.name` is "")
+
+  console.log("\n===== Example 3: Detaching Methods =====");
+
+  let say1 = obj.sayName;
+  let say2 = obj.sayNameArrow;
+
+  say1(); 
+  /*
+    Non-strict mode: "" (window.name) 
+    Strict mode: undefined 
+  */
+
+  say2(); 
+  /*
+    Always "" 
+    Because arrow function ignored `obj` completely and just used global `this`
+  */
+</script>
+
+<script>
+    let user = 
+    {
+        name: "Anu",
+
+        //Regular method
+        greet : function()
+        {
+            console.log("Hello, I am "+this.name);
+        }
+        //
+
+    }
+</script>
+
+</body>
+</html>
