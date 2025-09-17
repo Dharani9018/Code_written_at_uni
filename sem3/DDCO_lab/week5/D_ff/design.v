@@ -1,5 +1,5 @@
 module d_ff (input wire D, input wire clk, input wire rst, output reg Q);
-  always @(posedge clk) 
+  always @(posedge clk or posedge rst) 
     begin  
       if (rst) Q <= 1'b0;     // Asynchronous reset to 0   
       else      Q <= D;        // Sample D on rising edge of clock

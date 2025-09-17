@@ -1,0 +1,344 @@
+$date
+	Mon Sep 15 15:02:52 2025
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module tb_vending_machine $end
+$var wire 2 ! present_state_dbg [1:0] $end
+$var wire 2 " next_state_dbg [1:0] $end
+$var wire 1 # dispense $end
+$var reg 1 $ clk $end
+$var reg 2 % coin [1:0] $end
+$var reg 1 & reset $end
+$scope module uut $end
+$var wire 1 $ clk $end
+$var wire 2 ' coin [1:0] $end
+$var wire 2 ( next_state_dbg [1:0] $end
+$var wire 2 ) present_state_dbg [1:0] $end
+$var wire 1 & reset $end
+$var parameter 2 * S0 $end
+$var parameter 2 + S10 $end
+$var parameter 2 , S15 $end
+$var parameter 2 - S5 $end
+$var reg 1 # dispense $end
+$var reg 2 . next_state [1:0] $end
+$var reg 2 / present_state [1:0] $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+$comment Show the parameter values. $end
+$dumpall
+b1 -
+b11 ,
+b10 +
+b0 *
+$end
+#0
+$dumpvars
+b0 /
+b0 .
+b0 )
+b0 (
+b0 '
+1&
+b0 %
+0$
+0#
+b0 "
+b0 !
+$end
+#5000
+1$
+#10000
+0$
+#12000
+0&
+#15000
+1$
+#20000
+b1 "
+b1 (
+b1 .
+0$
+b1 %
+b1 '
+#25000
+b10 "
+b10 (
+b10 .
+b1 !
+b1 )
+b1 /
+1$
+#30000
+0$
+#35000
+1#
+b11 "
+b11 (
+b11 .
+b10 !
+b10 )
+b10 /
+1$
+#40000
+1#
+0$
+b10 %
+b10 '
+#45000
+b0 "
+b0 (
+b0 .
+0#
+b11 !
+b11 )
+b11 /
+1$
+#50000
+0$
+#55000
+b10 "
+b10 (
+b10 .
+b0 !
+b0 )
+b0 /
+1$
+#60000
+b0 "
+b0 (
+b0 .
+0$
+b0 %
+b0 '
+#65000
+1$
+#70000
+0$
+#75000
+1$
+#80000
+b10 "
+b10 (
+b10 .
+0$
+b10 %
+b10 '
+#85000
+1#
+b11 "
+b11 (
+b11 .
+b10 !
+b10 )
+b10 /
+1$
+#90000
+0$
+#95000
+b0 "
+b0 (
+b0 .
+0#
+b11 !
+b11 )
+b11 /
+1$
+#100000
+0$
+b1 %
+b1 '
+#105000
+b1 "
+b1 (
+b1 .
+b0 !
+b0 )
+b0 /
+1$
+#110000
+0$
+#115000
+b10 "
+b10 (
+b10 .
+b1 !
+b1 )
+b1 /
+1$
+#120000
+b1 "
+b1 (
+b1 .
+0$
+b0 %
+b0 '
+#125000
+1$
+#130000
+0$
+#135000
+1$
+#140000
+1#
+b11 "
+b11 (
+b11 .
+0$
+b10 %
+b10 '
+#145000
+b0 "
+b0 (
+b0 .
+0#
+b11 !
+b11 )
+b11 /
+1$
+#150000
+0$
+#155000
+b10 "
+b10 (
+b10 .
+b0 !
+b0 )
+b0 /
+1$
+#160000
+0$
+#165000
+1#
+b11 "
+b11 (
+b11 .
+b10 !
+b10 )
+b10 /
+1$
+#170000
+0$
+#175000
+b0 "
+b0 (
+b0 .
+0#
+b11 !
+b11 )
+b11 /
+1$
+#180000
+0$
+b0 %
+b0 '
+#185000
+b0 !
+b0 )
+b0 /
+1$
+#190000
+0$
+#195000
+1$
+#200000
+b1 "
+b1 (
+b1 .
+0$
+b1 %
+b1 '
+#205000
+b10 "
+b10 (
+b10 .
+b1 !
+b1 )
+b1 /
+1$
+#210000
+0$
+#215000
+1#
+b11 "
+b11 (
+b11 .
+b10 !
+b10 )
+b10 /
+1$
+#220000
+0$
+#225000
+b0 "
+b0 (
+b0 .
+0#
+b11 !
+b11 )
+b11 /
+1$
+#230000
+0$
+#235000
+b1 "
+b1 (
+b1 .
+b0 !
+b0 )
+b0 /
+1$
+#240000
+0$
+#245000
+b10 "
+b10 (
+b10 .
+b1 !
+b1 )
+b1 /
+1$
+#250000
+0$
+#255000
+1#
+b11 "
+b11 (
+b11 .
+b10 !
+b10 )
+b10 /
+1$
+#260000
+b10 "
+b10 (
+b10 .
+0#
+0$
+b0 %
+b0 '
+#265000
+1$
+#270000
+0$
+#275000
+1$
+#280000
+0$
+#285000
+1$
+#290000
+0$
+#295000
+1$
+#300000
+0$
+#305000
+1$
+#310000
+0$
