@@ -198,6 +198,112 @@ Absolutely, Dharani! Here's a clean and structured summary of everything we've d
 - `window` is the **central hub** for interacting with the browser.
 - It gives access to both your code and browser APIs.
 - Understanding `window` helps you avoid global scope pollution and write cleaner code.
+  
+Got it 👍 I’ll give you a **clean summary of everything** from your slides + my explanation, so you can copy it straight into your notes.
+
+---
+
+# **JavaScript Objects – Summary**
+
+### 1. Objects Basics
+
+* An **object** is a reference data type (stored by reference, not by value).
+* Objects represent real-world entities.
+* An object is an **unordered collection of properties** (key–value pairs).
+* If a property’s value is a function → it is called a **method**.
+
+---
+
+### 2. Object Creation Methods
+
+**a) Object Literal**
+
+```js
+let obj = { key: value, age: 20 };
+```
+
+* Simplest way using `{}`.
+* Properties written as key–value pairs.
+
+**b) Constructor Function**
+
+```js
+function Student(name) {
+    this.name = name;
+}
+let s1 = new Student("Alice");
+```
+
+* Functions can act as blueprints.
+* Use `new` to create object instances.
+
+**c) Anonymous Function Constructor**
+
+```js
+let obj = new function() {
+    this.x = 10;
+    this.y = 20;
+};
+```
+
+* Creates an object directly from an unnamed function.
+
+**d) Prototype Property**
+
+```js
+function Employee(name) {
+    this.name = name;
+}
+Employee.prototype.showName = function() {
+    return "Employee: " + this.name;
+};
+```
+
+* Every constructor has a `prototype`.
+* Methods added to prototype are **shared by all instances** (saves memory).
+
+**e) ES6 Class**
+
+```js
+class Employee {
+    constructor(name) {
+        this.name = name;
+    }
+    showName() {
+        return "Employee: " + this.name;
+    }
+}
+let e1 = new Employee("Bob");
+```
+
+* Cleaner syntax for constructor + prototype.
+* Internally still uses prototypes.
+
+---
+
+### 3. Reference Behavior
+
+* Objects are stored as **references**.
+* Copying an object variable does not copy the object, only the reference.
+
+```js
+let obj1 = { val: 10 };
+let obj2 = obj1;
+obj2.val = 20;
+console.log(obj1.val); // 20
+```
+
+---
+
+✅ **Summary of Ways to Create Objects**
+
+1. Object literal: `{ key: value }`
+2. Constructor function: `function Obj() { ... }` + `new Obj()`
+3. Anonymous function constructor: `new function() { ... }`
+4. Prototype: `Obj.prototype.method = ...`
+5. ES6 class: `class Obj { constructor() {...} }`
+
+---
 
 ---
 

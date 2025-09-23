@@ -1,0 +1,11 @@
+<html>
+  <body>
+    <h1>Page is loaded</h1>
+    <button onclick="document.write('Oops, everything is gone!')">Click me</button>
+  </body>
+</html>
+<!--
+When the button is clicked, the entire content of the page is replaced with "Oops, everything is gone!" because document.write() overwrites the existing document when called after the page has loaded.
+So, use innerhtml or appendchild-->
+
+

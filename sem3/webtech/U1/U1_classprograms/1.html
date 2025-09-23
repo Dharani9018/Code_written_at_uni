@@ -1,0 +1,30 @@
+<!--  For the HTML and corresponding screenshot given below, write 
+JavaScript code to implement the functionality of the two 
+buttons to change the quantity. The quantity should lie in the 
+range 0 to 10. Add properties to existing elements as 
+required.
+-->
+<html>
+    <body>
+ <h3>Quantity: <span>2</span></h3>
+ <button onclick="increment(event)">+</button><button onclick="decrement(event)">-</button>
+ <script>
+    function increment(event){
+        var span = document.querySelector("span");
+        var qty = parseInt(span.innerText);
+        if(qty < 10){
+            qty++;
+            span.innerText = qty;
+        }
+    }
+    function decrement(event){
+        var span = document.querySelector("span");
+        var qty = parseInt(span.innerText);
+        if(qty > 0){
+            qty--;
+            span.innerText = qty;
+        }
+    }   
+ </script>
+ </body>
+ </html>

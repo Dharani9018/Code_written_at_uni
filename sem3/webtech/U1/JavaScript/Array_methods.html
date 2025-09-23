@@ -37,7 +37,7 @@ console.log("Using join(): " + arr.join(""));
 console.log("Using pop(): Removed element " + arr.pop());
 console.log("Array after pop(): " + arr);
 
-//Shitf removes the first element and returns it.
+//Shift removes the first element and returns it.
 console.log("Using shift(): Removed element " + arr.shift());
 
 //unshift adds element to the start of the array.
@@ -50,6 +50,7 @@ console.log("Using delete: " + arr);
 console.log("Array length after delete: " + arr.length);
 
 //splice can be used to add,remove or replace elements in the array.
+
 //splice(starting index,no of elements to be removed, elements to be added)
 arr.splice(2,1,"Dog","Cat");
 console.log("Using splice to remove 1 element at index 2 and add Dog, Cat: " + arr);

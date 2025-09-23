@@ -1,0 +1,50 @@
+<html>
+
+<body>
+<script>
+	// javascript objects
+	var student
+	= {
+		firstname:"Shreyus",
+		lastname:"G",
+		SRN:101,
+		fullname :function (){
+			alert(this.firstname+" "+this.lastname);
+		}
+	}
+	//alternate way to intialize
+	student.firstname = "Nishanth";
+	student.lastname = "reddy"
+	fullname :function name(){
+			alert(this.firstname+" "+this.lastname);}
+	
+	//display the values
+	document.write(typeof(student))
+	document.write("<br>",student.firstname);
+	document.write("<br>",student.lastname);
+	document.write("<br>",student.fullname());
+
+// function constructors
+ function Person(name,sec,sem,branch){
+	this.stuname = name;
+	this.stusec = sec;
+	this.stusem = sem;
+	//this.stubranch = branch;
+ }
+ //create object properties outise constructor 
+ Person.prototype.stubranch = "AIML";
+ Person.prototype.stusubject = "WEB TECHNOLOGIES";
+
+// intialize an object from constructor
+var student1 = new Person("Nishanth","A",3,"CSE");
+document.write("<br>",student1.stuname);
+document.write("<br>",student1.stusec);
+document.write("<br>",student1.stusem);
+document.write("<br>",student1.stubranch);
+document.write("<br>",student1.stusubject);
+
+
+</script>
+
+</body>
+</html>

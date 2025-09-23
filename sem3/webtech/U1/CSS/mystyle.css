@@ -19,7 +19,7 @@ body {
 /* External CSS for <h2> headings (can be overridden by internal CSS) */
 h2 {
   border: 2px dotted #888;
-  background-color: #dbacac;
+  background-color:"burlywood";
   color: #333;
   padding: 6px 0 6px 10px;
   margin-bottom: 20px;

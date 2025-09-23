@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>DOM</title>
+</head>
+<body>
+    <div>
+        <p id="m1">Meow 1</p>
+        <p class="Classname" data-value="Im value1" >Meow 2 </p>
+        <p class="Classname" data-value="Im value2">Meow 3</p>   
+        <p class="Classname" data-value="Im value3">Meow 4</p>
+    </div>
+
+    <div>
+        <input type="radio" name="x" value="1">
+        <input type="radio" name="x" value="2">
+    </div>
+    <script>
+        //get elements by id
+        let p1 = document.getElementById("m1");
+        console.log(p1);
+        //get elements by name: returns a node list: 
+        let btn = document.getElementsByName("x");
+        console.log(btn);
+        console.log(btn[0]);
+        console.log(btn[0].value);
+
+        //get elements by classname:
+        let Meow = document.getElementsByClassName("Classname");
+        console.log(Meow);
+        console.log(Meow[1].dataset.value);
+
+        //get elements by tagname:
+        let p = document.getElementsByTagName("p");
+        console.log(p);
+                                                                                    
+    </script>
+</body>
+</html>

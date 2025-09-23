@@ -1,0 +1,35 @@
+
+<html>
+<head>
+ 
+  <title>Axios Example with CDN</title>
+  <!-- Axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <button onclick = "getData()">Fetch Data</button>
+  <p id = "result"></p>
+  <script>
+   function getData(){
+   /*axios.get("https://jsonplaceholder.typicode.com/users/3")
+    .then(function (response){
+      console.log(response.data);// console 
+      //output in document
+      document.querySelector("#result").innerHTML = JSON.stringify(response.data);
+    })
+    .catch(function(error){
+      console.log("Error in fetching",error);
+      document.querySelector("#result").innerHTML = "error in fetching the user data";
+    })*/
+   axios.get("https://jsonplaceholder.typicode.com/users",{
+    params : {phone :"024-648-3804"},
+    headers :{'Authorization':'Bearer your_token'},
+    timeout : 5000,
+    responseType: 'json'
+   })
+   .then(res=>{console.log(res.data)})
+   .catch(error=>{console.log("request failed",error)})
+  }
+  </script>
+</body>
+</html>

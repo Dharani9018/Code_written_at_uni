@@ -1,0 +1,37 @@
+<html>
+	<body>
+
+		<div class="example">First div element</div>
+		<div class="example">Second div element</div>
+		
+		<p id="demo">web</p>
+		
+		<p>This is a paragraph.</p>
+		<p>This is a paragraph.</p>
+		<p>This is a paragraph.</p>
+
+		Firstname:<input type = "text" name = fname value ="Shaun" />
+		Lastname:<input type = "text" name = fname value ="Easo" />
+			
+	<script>
+		document.getElementById("demo").innerHTML="Data Structures";
+	document.getElementsByClassName("example")[1].innerHTML= "hello class..."
+	var x = document.getElementsByTagName("p")
+	x[3].innerHTML= "purple";
+
+	var e = document.getElementsByName("fname")
+	document.write("<br>",e[0].tagName);
+	e[0].value ="Jeny";
+
+	//var x = document.querySelector(".example").style.color ="purple";
+	//x.style.color = "red";
+	var x = document.querySelectorAll(".example")
+	//for(var i = 0;i<x.length;i++)
+	for(i in x) // for-in loop
+	{
+		x[i].style.backgroundColor ="red";
+	}
+	</script>
+
+	</body>
+</html>

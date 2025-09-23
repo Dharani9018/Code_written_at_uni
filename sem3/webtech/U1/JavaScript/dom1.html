@@ -3,37 +3,41 @@
         <div class="example">First div element</div>
         <div class="example">Second div element</div>
 
-    <p id="demo">web</p>
+    <p id="demo">Web Tech</p>
 
     <p>This is a paragraph.</p>
     <p>This is a paragraph.</p>
     <p>This is a paragraph.</p>
+    <div id="id">
     Firstname:<input type = "text" name = fname value = "Shaun"/>
     Lastname:<input type = "text" name = fname value = "X"/>
-    
+    </div>
 
     <script>
-        /*
+        
         document.getElementById("demo").innerHTML="Data structure" //changing content.
-        document.getElementsByClassName("example")[1].innerHTML
+
+        document.getElementsByClassName("example")[1].innerHTML="Changed second div"
+       
         var x = document.getElementsByTagName("p") //x->array has collection of p nodes
         x[1].style.backgroundColor="pink";
         x[0].style.backgroundColor="yellow";
-       // x[1].innerHTML="Meow" --> changing content of 1
-       var e = document.getElementsByName("fname")
-       document.write("<br>",e[0].tagName); 
-       e[1].style.color = "red";
-       //e[1].value = "Y"; ->changes value
-       */
+        x[2].style.backgroundColor="cyan"
+       //x[1].innerHTML="Meow" //--> changing content of 1
+       var e = document.getElementsByName("fname") 
+       e[1].style.color = "green";
+       e[1].style.fontSize="30px";
+      // e[1].value = "Y"; //->changes value
 
-       var a = document.querySelector(".example");
-       //x.style.color="red";
-        for( i in a)
+
+       var a = document.querySelectorAll(".example");
+ 
+        for(var i = 0;i<a.length;i++)
         {
-            a[i].style.backgroundColor = "yellow";
+            a[i].style.backgroundColor = "skyblue";
         }
-
-
-   </script>
+       var a = document.getElementById("id");
+        a.style.backgroundColor = "lightgreen";
+    </script>
     </body>
 </html>

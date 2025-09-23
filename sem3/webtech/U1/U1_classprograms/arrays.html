@@ -1,0 +1,86 @@
+<html>
+<head>
+<script>
+var a = new Array();
+a[0]="abc";
+a[1]="xyz";
+a[2]="jkl";
+var b = a.concat(a[1]);
+document.write("concatenated string is :",b);
+
+//var c = a.pop();
+//document.write("<br> popped string is :",c);
+a.push("hhh","jjj");
+document.write("<br> pushed string is :",a);
+
+var c = a.shift();
+document.write("<br> shifted array ele are  :",a);
+
+a.unshift("abc");
+document.write("<br> unshifted array ele are  :",a);
+//document.write("<br>",a.toString())
+
+var ar = new Array();
+ar[0]="aaa"
+ar[1]="bbb"
+ar[2]="ccc"
+ar[3]="ddd"
+ar[4]="eee"
+ar[5]="fff"
+
+//slice - will start from starting index position till end ,but does not include the given end argument
+var d = ar.slice(2,5);
+document.write("<br> sliced elements is :",d);
+
+//splice - 3 parameters, 1-  position to be inserted, 2- no.of ele to be replaced,3- ele to be inserted 
+var fruits = ["Banana","Orange","Apple","Grapes"];
+fruits.splice(1,1,"Watermelon","Kiwi");
+document.write("<br> new array is :",fruits);
+
+var s = ar.join("*");
+document.write("<br>  array is :",s);
+
+ar.reverse();
+document.write("<br>  reversed array is :",ar);
+
+ar.sort();
+document.write("<br>  sorted array is :",ar);
+
+const arr = [1,100,6,4];
+//arr.sort(); sorts alphabetically
+arr.sort(function(a,b){return b-a;})// compare function 
+document.write("<br>  sorted array is :",arr);
+
+//Number functions
+document.write("<br> Number is:",Number.NEGATIVE_INFINITY );
+function check(x){
+    if(isNaN(x)){
+        return "Not a number"
+    }
+    return x;
+}
+document.write("<br>",check("aaa"));
+
+//MATH FUNCTION
+document.write("<br> Number is:",Math.PI) ;
+
+//date object
+var d = new Date();
+document.write("<br>Current date is:",d.toString())
+document.write("<br>Current date is:",d.getHours())
+document.write("<br>Current date is:",d.getSeconds())
+document.write("<br>Current date is:",d.getFullYear())
+
+//timemethods 
+count = 0;
+function log(){
+    console.log(count);
+    count++;
+    if(count == 10)
+    clearInterval(t);
+}
+setTimeout(log,6000);
+var t = setInterval(log,2000)
+</script>
+</head>
+</html>
