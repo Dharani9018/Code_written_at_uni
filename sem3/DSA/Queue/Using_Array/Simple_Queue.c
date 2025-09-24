@@ -45,7 +45,7 @@ int main()
   int q[10];
   int front=0,rear=-1;
   int ch,ele,x;
-  while (true) 
+  while (1) 
   {
     printf("\n1.Enqueue\n2.Dequeue\n3.Display\n4.Exit\n");
     scanf("%d",&ch);

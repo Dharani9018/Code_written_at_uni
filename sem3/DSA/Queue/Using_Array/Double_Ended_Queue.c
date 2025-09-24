@@ -55,14 +55,7 @@ void Insert_At_rear(int *q,int *front,int *rear,int ele)
   {
     *front=*rear=0;
   }
-  else if(*rear==MAX-1)
-  {
-    *rear = 0;
-  }
-  else
-  {
-    *rear = *rear + 1;
-  }
+  *rear = (*rear + 1)%MAX;
   q[*rear] = ele;
   return;
 }

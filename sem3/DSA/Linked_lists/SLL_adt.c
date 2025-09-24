@@ -98,9 +98,7 @@ void insert_at_pos(int ele, int pos, list *l)
 {
   N *pre=NULL;
   N *cur = l->head;
-  N *temp = malloc(sizeof(N));
-  temp->next = NULL;
-  temp->data = ele;
+  N *newnode = createNewnode(ele);
 
   int i = 1;
   while(cur!=NULL && i<pos)
@@ -113,20 +111,21 @@ void insert_at_pos(int ele, int pos, list *l)
   {
     if(pre==NULL)
     {
-      l->head = temp;
-      temp->next = cur;
+      l->head = newnode;
+      newnode->next = cur;
     }
     else
     {
-      pre->next = temp;
-      temp->next = cur;
+      N *temp = cur->next;
+      cur->next = newnode;
+      newnode->next = temp;
     }
   }
   else
   {
     if(pos==i)
     {
-      pre->next=temp;
+      pre->next=newnode;
     }
     else
     {
@@ -148,11 +147,12 @@ void insert_sort_list(int ele, list *l)
   }
   N *cur = l->head;
   N *pre = NULL;
-  while(cur->data<newnode->data && cur->next!=NULL)
+  while(cur->data<=newnode->data && cur->next!=NULL)
   {
     pre = cur;
     cur = cur->next;
   }
+
   if(pre==NULL)
   {
     l->head = newnode;
@@ -181,6 +181,36 @@ int count(list *l)
   return count;
 }
 
+void reverse(list *l)
+{
+  if(l->head==NULL)
+  {
+    printf("Empty list\n");
+    return;
+  }
+  N *cur = l->head;
+  N *pre = NULL;
+  N *temp = NULL;
+  while(cur!=NULL)
+  {
+    pre = cur;
+    cur = cur->next;
+    if(pre==l->head)
+    {
+      temp = pre;
+      pre->next = NULL;
+    }
+    else
+    {
+      pre->next = temp;
+      temp = pre;
+    }
+  }
+  l->head = pre;
+
+}
+
+
 void display(list *l)
 {
   if(l->head==NULL)
@@ -207,7 +237,7 @@ int main()
   while(1)
   {
     printf("\n");
-    printf("1: Insert at front\n2:Insert At rear\n3:display\n4:delete at front\n5:delete at rear\n6:Insert at position\n7:insert at correct position in ascending\n8:exit\n");
+    printf("1: Insert at front\n2:Insert At rear\n3:display\n4:delete at front\n5:delete at rear\n6:Insert at position\n7:insert at correct position in ascending\n8.reverse\n9:exit\n");
     scanf("%d",&choice);
     switch (choice) 
     {
@@ -250,7 +280,11 @@ int main()
         break;
 
       case 8:
-        exit(0);
+        reverse(&L);
+        break;
+
+      case 9:
+        return 0;
 
       default:
         printf("Invalid choice\n");
@@ -258,8 +292,6 @@ int main()
     }
   }
   return 0;
-
-
 }
 
 
