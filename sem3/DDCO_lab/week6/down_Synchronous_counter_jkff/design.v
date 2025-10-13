@@ -1,0 +1,25 @@
+module jk_ff (input wire j, input wire k,input wire clk,  input wire rst,output reg q );
+ always @(posedge clk or posedge rst) 
+ begin       
+  if (rst)     q <= 1'b0;                // Reset to 0       
+  else begin
+   case ({j, k})             
+    2'b00: q <= q;        // No change       
+    2'b01: q <= 1'b0;     // Reset       
+    2'b10: q <= 1'b1;     // Set            
+    2'b11: q <= ~q;       // Toggle          
+   endcase
+  end
+ end 
+endmodule
+
+module down_counter (input clk, input rst, output [1:0] q);
+ wire j0, k0, k1, j1;
+ assign j0 = 1'b1;
+ assign k0 = 1'b1;
+ assign j1 = q[0];
+ assign j2 = q[0];
+
+ jk_ff uut1(j0,k0,clk,rst,q[0]);
+ jk_ff uut2(j1,k1,clk,rst,q[1]); 
+endmodule
