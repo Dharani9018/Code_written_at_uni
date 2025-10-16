@@ -110,6 +110,69 @@ void Delete(NODE **root, int key) {
   free(cur);
   printf("\nNode %d deleted\n", x);
 }
+//WAF to find the max node:
+int MaxNode(NODE *root)
+{
+  if(root==NULL)
+    return -1;
+
+  if(root->right==NULL)
+  {
+    return root->data;
+  }
+  NODE *cur = root,*pre=NULL;
+
+  while(root!=NULL)
+  {
+    pre = cur;
+    cur = cur->right;
+  }
+  return pre->data;
+}
+//waf to count the no. of nodes:
+int countNodes(NODE *root)
+{
+    if(root == NULL)
+        return 0;
+    return 1 + countNodes(root->left) + countNodes(root->right);
+}
+
+//waf to count the no. of leaf nodes:
+int leafcount(NODE *root)
+{
+  int l,r;
+  if(root==NULL)
+    return 0;
+  if(root->left==NULL && root->right==NULL)
+    return 1;
+  l = leafcount(root->left);
+  r = leafcount(root->right);
+  return l+r;
+}
+//waf to search for a particular element:
+int search(NODE *root,int key)
+{
+  if(root==NULL)
+    return 0;
+  if(root->data==key)
+    return 1;
+  if(key>root->data)
+   return search(root->right,key);
+  return search(root->left,key);
+}
+//waf to calculate the height of the binary tree:
+int height(NODE *root)
+{
+  int l,r;
+  if(root==NULL)
+    return -1;
+  if(root->left==NULL && root->right==NULL)
+    return 0;
+
+  l = height(root->left);
+  r = height(root->right);
+  return (l > r) ? (l + 1) : (r + 1);
+}
 
 int main() {
   NODE *root = NULL;
