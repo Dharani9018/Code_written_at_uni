@@ -1,64 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Samarpana Marathon Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <style>
-    body { background: #e3e3e3; }
-    .container { margin-top: 30px; }
-    </style>
+    <title>Samarpana Marathon</title>
 </head>
 <body>
-    <div class="container">
-        <h2>Samarpana Marathon Registration</h2>
-        <div class="datetime" id="datetime"></div>
-        <form id="registrationForm">
-            <div>
-                <label for="name">Full Name *</label>
-                <input type="text" id="name" name="name">
-                <div class="error" id="nameError"></div>
-            </div>
-            <div>
-                <label for="email">Email *</label>
-                <input type="text" id="email" name="email">
-                <div class="error" id="emailError"></div>
-            </div>
-            <div>
-                <label for="phone">Phone Number *</label>
-                <input type="text" id="phone" name="phone">
-                <div class="error" id="phoneError"></div>
-            </div>
-            <div>
-                <label for="age">Age *</label>
-                <input type="number" id="age" name="age">
-                <div class="error" id="ageError"></div>
-            </div>
-            <div>
-                <label for="tshirt">T-shirt Size *</label>
-                <select id="tshirt" name="tshirt">
-                    <option value="">-- Select Size --</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-                <div class="error" id="tshirtError"></div>
-            </div>
-            <table class="tshirt-table">
-                <tr><th>Size</th><th>Chest</th><th>Length</th></tr>
-                <tr><td>XS</td><td>34</td><td>25</td></tr>
-                <tr><td>S</td><td>36</td><td>26</td></tr>
-                <tr><td>M</td><td>38</td><td>27</td></tr>
-                <tr><td>L</td><td>40</td><td>28</td></tr>
-                <tr><td>XL</td><td>42</td><td>29</td></tr>
-                <tr><td>XXL</td><td>44</td><td>30</td></tr>
-            </table>
-            <button type="submit">Register</button>
-        </form>
-        
-    </div>
-    <script src="script.js"></script>
+    <h1>Welcome to Samarpana Marathon</h1>
+    <form action="#" method="get">
+        <fieldset id="R"><legend>Register here</legend>
+
+        <br><br>
+        <div id="N">
+        <fieldset>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required><br><br> </div>
+        </fieldset>
+        <fieldset>
+        <label for="gender">Gender :</label>
+        <input type="radio" id="gender" name="gender" value="Female" required>Female
+        <input type="radio" id="gender" name="gender" value="Male" required>Male
+        <input type="radio" id="gender" name="gender" value="Other" required>Other<br><br></fieldset>
+        <fieldset><label for="age">Age</label>
+        <input type="number" id="age" name="age" required><br><br>
+        </fieldset>
+        <fieldset>
+        <label for="size">Select T-Shirt size</label>
+        <select id="size" name="size" required>
+            
+            <option value="S">S</option>
+            <option value="XS">XS</option>
+            <option value="XXS">XXS</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="XXL">XXL</option>
+            </select><br><br> 
+         </fieldset>
+        <fieldset>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+        </fieldset>
+        </fieldset>
+
+    </form>
 </body>
 </html>

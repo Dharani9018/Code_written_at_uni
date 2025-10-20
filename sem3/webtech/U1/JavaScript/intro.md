@@ -87,7 +87,60 @@ document.writeln(colors[1]); //index starts from 0.
 
 const mixed = [25,"pesu",true,{class: A&C}]
 ```
+
+## Functions:
+
+### 1.Named functions:
+
+```javascript
+function greet() {
+  return "Hello!";
+}
+console.log(greet()); // Hello!
+```
+### 2.Anonymous  functions
+
+```javascript
+const greet = function() {
+  return "Hi there!";
+};
+console.log(greet()); // Hi there!
+```
+
+### 3.Arrow Functions:
+
+```javascript
+const square = n => n * n;
+console.log(square(4)); // 16
+```
+
+
+### 4.Constructor Function:
+
+```javascript
+function Person(name, age)
+{
+  this.name = name;
+  this.age = age;
+}
+
+const user = new Person("anu",22);
+```
+
+### 5. Self invoking function
+
+```javascript
+(function() {
+    console.log("This is a self-invoking function!");
+})();
+```
+
+## Asynchronous Javascript:
+
+
+
 ## `this` keyword:
+
 > A special keyword whose depends on how a function is called, not where its written.(Its like an object that is currently using the function).
 Absolutely, Dharani! Here's a clean and structured summary of everything we've discussed so far—perfect for your notes:
 
@@ -159,6 +212,7 @@ Absolutely, Dharani! Here's a clean and structured summary of everything we've d
 ## 🪟 `window` Object in JavaScript
 
 ### 🔹 What is `window`?
+
 - In **client-side JavaScript**, the `window` object is the **global object**.
 - It represents the **browser window/tab** where your web page runs.
 - All global variables, functions, and built-in browser features are properties of `window`.
@@ -166,6 +220,7 @@ Absolutely, Dharani! Here's a clean and structured summary of everything we've d
 ---
 
 ### 🔹 Key Properties & Behavior
+
 - When JavaScript starts, it creates a single global object—`window` in browsers.
 - Any variable or function declared in the global scope becomes a property of `window`.
   ```javascript
@@ -174,6 +229,7 @@ Absolutely, Dharani! Here's a clean and structured summary of everything we've d
   ```
 
 - You can access global properties **with or without** the `window.` prefix:
+  
   ```javascript
   window.status = "test";
   status = "test"; // same effect
@@ -199,7 +255,7 @@ Absolutely, Dharani! Here's a clean and structured summary of everything we've d
 - It gives access to both your code and browser APIs.
 - Understanding `window` helps you avoid global scope pollution and write cleaner code.
   
-Got it 👍 I’ll give you a **clean summary of everything** from your slides + my explanation, so you can copy it straight into your notes.
+
 
 ---
 

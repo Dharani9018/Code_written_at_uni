@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Orange</title>
+  </head>
+    <body style="background-color: rgb(204, 166, 172); box-sizing: border-box;">
+
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+<!-- 
+        <div style="  
+      margin-left: 200px; 
+      padding: 10px;
+      background-color:rgb(227, 220, 222);
+      border-radius: 9px; 
+      margin-right: 20px;
+      margin-bottom: 20px; 
+      display: inline-block; 
+      flex-direction: center;
+      align-items: center;">
+
+      <h2 
+      style=
+      " 
+        margin-bottom: 0px;
+        margin-top: 0px;"
+        >
+        Travel media
+      </h2>
+      <video
+        controls
+        muted
+        width = "400"
+        height = "200"
+        style= "  border-radius: 9px;
+        margin-right:100px " ;
+      >
+        <source src="video.mp4" type="video/mp4" />
+
+      </video>
+      <br>
+      	<audio controls 
+        width = "400"
+
+        style= "border-radius: 9px; " 
+         >
+		<source src = "video.mp4" type = "video/mp4">
+	</audio>
+      </div>
+
+<div  style=" 
+      position : absolute;
+
+      right: 400px;
+      padding: 10px;
+      background-color:rgb(227, 220, 222);
+      border-radius: 9px; 
+      
+      
+      display: inline-block; 
+      flex-direction: center;
+      align-items: left;">  
+            <h2 
+      style=
+      " 
+        margin-bottom: 0px;
+        margin-top: 0px;"
+        >
+        Locate Me
+      </h2>
+<button onclick="getLocation() " style="background-color:rgb(74, 74, 233);
+color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 150px;
+  margin-right: 200px
+">Get Location</button>
+
+<p id="demo" ></p>
+
+<script>
+x = document.getElementById("demo");
+function getLocation(){
+	if(navigator.geolocation){
+		navigator.geolocation.getCurrentPosition(showPosition,error);
+	}
+	else {
+		x.innerHtml = "geolocation is not supported in this browser"
+	}
+}
+function showPosition(position){
+	x.innerHTML = "Latitude : "+position.coords.latitude + "<br> Longitude :"+position.coords.longitude;
+}
+function error(err){
+	e = err;
+	console.log(e);
+}
+
+</script>
+</div>
+<br>
+<div
+     
+  style="
+      margin-left: 200px; 
+      padding: 10px;
+      background-color:rgb(227, 220, 222);
+      border-radius: 9px; 
+      margin-right: 20px;
+      margin-bottom: 20px; 
+      display: inline-block; 
+      flex-direction: column;
+      align-items: center;"> 
+        <h2 
+      style=
+      " 
+        margin-bottom: 0px;
+        margin-top: 10px;"
+        >
+        User Data (Axios Fetch)
+      </h2>
+  <button onclick="getData()" style="background-color:rgb(74, 74, 233);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-right: 385px;
+  margin-top: 20px;"
+  >
+  Fetch User
+</button>
+<p id="result"></p>
+<script>
+    function getData() {
+      axios.get("https://jsonplaceholder.typicode.com/users/1", { timeout: 5000 })
+        .then(res => {
+          const user = res.data;
+          const output = `
+            Name:${user.name}<br>
+         
+            Email: ${user.email}
+            <br>
+            Phone: ${user.phone}
+          
+           
+          `;
+          document.getElementById("result").innerHTML= output;
+        })
+        .catch(error => {
+          console.log("Request failed", error);
+          document.getElementById("result").innerHTML = "Error fetching data";
+        });
+    }
+
+
+</script>
+</div>  
+-->
+  </body>
+</html>
