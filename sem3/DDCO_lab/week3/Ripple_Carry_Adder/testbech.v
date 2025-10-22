@@ -39,11 +39,15 @@ module tb;
 
 initial begin    #6 
 
-for(i=0;i<`TESTVECS;i=i+1)   
-   begin #10 {i0, i1, cin}=test_vecs[i]; 
+  for(i=0;i<`TESTVECS;i=i+1)   begin
+    #10 {i0, i1, cin}=test_vecs[i]; 
 
- end    #100 $finish;  end
-always@(i0 or i1 or cin)
-$monitor("At time = %t, i0=%b, i1=%b,cin=%b,Sum = %b,Carry %b", $time,i0,i1,cin,o,cout);
+ end   
+  $finish;  
+end
+always@(i0 or i1 or cin) begin
+  $monitor("At time = %t, i0=%b, i1=%b,cin=%b,Sum = %b,Carry %b", $time,i0,i1,cin,o,cout);
+end
+
 endmodule
 

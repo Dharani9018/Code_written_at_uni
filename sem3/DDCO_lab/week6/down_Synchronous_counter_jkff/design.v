@@ -17,8 +17,8 @@ module down_counter (input clk, input rst, output [1:0] q);
  wire j0, k0, k1, j1;
  assign j0 = 1'b1;
  assign k0 = 1'b1;
- assign j1 = q[0];
- assign j2 = q[0];
+ assign j1 = ~q[0];
+ assign k1 = ~q[0];
 
  jk_ff uut1(j0,k0,clk,rst,q[0]);
  jk_ff uut2(j1,k1,clk,rst,q[1]); 

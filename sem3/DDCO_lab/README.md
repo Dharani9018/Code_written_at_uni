@@ -1,0 +1,1 @@
+The backticks ` in Verilog are used for compiler directives.

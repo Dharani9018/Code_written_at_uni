@@ -11,6 +11,7 @@ module dff (
       q <= d;
   end
 endmodule
+
 module ripple_up_counter_2bit (
   input wire clk,
   input wire rst,
